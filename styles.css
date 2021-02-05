@@ -34,7 +34,8 @@ box-sizing: border-box;
 border-radius: 10px;
 font-size: 20px;
 padding:10px ;
-box-sizing: border-box
+box-sizing: border-box;
+
 
 }
 .input-div{
@@ -206,6 +207,7 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 border-radius: 20px;
+margin-bottom: 25px;
 }
 
 .placar-contador{
@@ -276,7 +278,7 @@ align-items: center;
 .box-direira{
    display: flex;
     height: 100%;
-    width: 29%;
+    width: 29.99%;
     background-color: #0097E6;
     justify-content: center;
     align-items: center;
