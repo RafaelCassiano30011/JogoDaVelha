@@ -253,8 +253,9 @@ align-items: center;
    background-color: #FFFFFF;
    font-size: 150px;
     border-radius: 20px;
-    padding-bottom: 20px;
+    cursor: pointer;
     color: #6A6A6A;
+    
 }
 
 .campo-cenario{
