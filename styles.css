@@ -1,17 +1,21 @@
-*{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-body{
+
+body {
     width: 100vw;
     height: 100vh;
     display: flex;
 }
-main{
+
+main {
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: center
 }
-.box-esquerda{
+
+.box-esquerda {
     height: 100%;
     width: 30%;
     background-color: #0097E6;
@@ -19,117 +23,122 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-    }
-.input-box{
-   box-sizing: border-box
 }
-    .input-player{
-display: flex;
-width: 100%;
-height: 100%;
-border: none;
-outline: none;
-box-sizing: border-box;
-border-radius: 10px;
-font-size: 20px;
-padding:10px ;
-box-sizing: border-box;
 
-
+.input-box {
+    box-sizing: border-box
 }
-.input-div{
-display: flex;
-height: 40px;
-width: 383px;
-background-color: #FFFFFF;
-border-radius:10px ;
-justify-content: center;
-align-items: center;
-box-sizing: border-box;
-padding: 10px;
-margin-bottom: 10px;
 
+.input-player {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #6A6A6A;
 }
-.button-input{
+
+.input-div {
+    display: flex;
+    height: 40px;
+    width: 383px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.button-input {
     display: flex;
     width: 82px;
     height: 30px;
-    border-radius:50px ;
+    border-radius: 50px;
     background-color: #0097E6;
     display: flex;
-  align-items: center;
-margin-right: 5px;
-cursor: pointer;
-outline: none;
-position: relative;
+    align-items: center;
+    margin-right: 5px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
 }
-.button-input:hover .bolinha{
+
+.button-on .bolinha {
     right: 6px;
 }
 
-.bolinha{
+.bolinha {
     width: 20px;
-    height:20px;
+    height: 20px;
     color: #FFFFFF;
-  background-color: #FFFFFF;
-  border-radius: 50px;
-  padding: 5px;
- position: absolute;
- transition-duration: 300ms;
- right: 40px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    padding: 5px;
+    position: absolute;
+    transition-duration: 300ms;
+    right: 40px;
 }
-.type-play{
+
+.type-play {
     font-size: 20px;
     color: #45F391;
     margin-top: 10px;
-
 }
-.option-play{
+
+.option-play {
     display: flex;
     margin-top: 10px;
     width: 100%;
     justify-content: space-between;
     flex-direction: column;
     color: #FFFFFF;
-    font-size: 18px; 
+    font-size: 18px;
 }
-.bolinha2{
+
+.bolinha2 {
     width: 20px;
-    height:20px;
+    height: 20px;
     color: #FFFFFF;
-  background-color: #FFFFFF;
-  border-radius: 50px;
-  padding: 5px;
- position: absolute;
- transition-duration: 300ms;
- right: 55px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    padding: 5px;
+    position: absolute;
+    transition-duration: 300ms;
+    right: 55px;
 }
-.button-option{
+
+.button-option {
     display: flex;
     width: 82px;
     height: 30px;
-    border-radius:50px ;
+    border-radius: 50px;
     background-color: #0097E6;
     display: flex;
-  align-items: center;
-margin-right: 5px;
-border: solid 1px #FFFFFF;
-cursor: pointer;
-outline: none;
-position: relative;
-
+    align-items: center;
+    margin-right: 5px;
+    border: solid 1px #FFFFFF;
+    cursor: pointer;
+    outline: none;
+    position: relative;
 }
-.button-option:hover .bolinha2{
+
+.button-md-on .bolinha2 {
     right: 6px;
 }
 
-.span-option{
+.span-option {
     display: flex;
     justify-content: space-evenly;
-    
 }
-.button-play{
+
+.button-play {
     cursor: pointer;
     width: 360px;
     height: 40px;
@@ -140,21 +149,43 @@ position: relative;
     outline: none;
     font-size: 27px;
     margin-top: 5px;
-}.h5{
+}
+
+.h5 {
+    margin-top: 40px;
     font-size: 20px;
     color: #FFFFFF;
+}
+
+.h5-box {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper-historico-player {
     margin-top: 50px;
-}.box-historico-player{
-    height:17% ;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    height: 200px;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.nome-vencedor-historico {
+    color: #6A6A6A;
+    font-size: 18px;
+}
+
+.box-historico-player {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-   
-   align-items: center;
-   
-   
+    align-items: center;
+    margin-bottom: 10px;
 }
-.historico-player{
+
+.historico-player {
     width: 146px;
     height: 56px;
     background-color: #FFFFFF;
@@ -162,16 +193,18 @@ position: relative;
     color: #45F391;
     flex-direction: column;
     border-radius: 10px;
-    align-items: center;    
-    justify-content: space-evenly;
-    font-size:19px;
-
-}.span-cenario{
-   color: #FFFFFF;
-   font-size: 20px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 19px;
+    user-select: none;
 }
 
-.button-reiniciar{
+.span-cenario {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.button-reiniciar {
     width: 300px;
     height: 50px;
     border: none;
@@ -180,92 +213,95 @@ position: relative;
     font-size: 20px;
     cursor: pointer;
     color: #0097E6;
-    margin-top: 90px;
+    margin-top: 100px;
     margin-bottom: 1px;
 }
-.box-do-meio{
+
+.box-do-meio {
     height: 100%;
-width: 42%;
-background-color: #04acfa;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column
-
-
+    width: 42%;
+    background-color: #04acfa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
 }
-.placa-box{
+
+.placa-box {
     height: 20%;
     width: 100%;
-   margin-bottom: 1000px;
+    margin-bottom: 1000px;
 }
-.placa-conteiner{
+
+.placa-conteiner {
     height: 90px;
     width: 500px;
     background-color: #FFFFFF;
-display: flex;
-justify-content: space-around;
-align-items: center;
-border-radius: 20px;
-margin-bottom: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 25px;
 }
 
-.placar-contador{
+.placar-contador {
     font-size: 45px;
     color: #0097E6;
 }
-.Placar-titulo{
+
+.Placar-titulo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    
 }
 
-.titulo{
+.titulo {
     font-size: 40px;
-    color:#0097E6;
-margin-bottom: 10px;
-}
-.nome-jogador{
-    font-size: 20px;
     color: #0097E6;
-    margin-top: 20px;
-
+    margin-bottom: 10px;
 }
-.campo-de-batalha{
+
+.nome-jogador {
+    font-size: 23px;
+    color: #0097E6;
+    margin-bottom: 20px;
+}
+
+.campo-de-batalha {
     width: 550px;
     height: 550px;
     display: flex;
-margin-top: 50px;
-flex-wrap: wrap;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.campo{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 170px;
-   height: 170px;
-   background-color: #FFFFFF;
-   font-size: 150px;
+.campo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    background-color: #FFFFFF;
+    font-size: 150px;
     border-radius: 20px;
     cursor: pointer;
     color: #6A6A6A;
-    
+    user-select: none;
 }
 
-.campo-cenario{
+.campo-cenario {
     display: flex;
     width: 80px;
     height: 80px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.campo-historico{
+
+.campo-historico {
     display: flex;
     width: 24px;
     height: 24px;
@@ -273,22 +309,46 @@ align-items: center;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    font-size:15px ;
+    font-size: 15px;
     color: #6A6A6A;
 }
-.box-direira{
-   display: flex;
+
+.box-direira {
+    display: flex;
     height: 100%;
     width: 29.99%;
     background-color: #0097E6;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-}.historico-de-jogadas{
+}
+
+.historico-de-jogadas {
     color: #FFFFFF;
 }
-.jogadas-box{
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+.jogadas-wrapper {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 300px;
+}
+
+.jogadas-box {
     margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -298,20 +358,63 @@ align-items: center;
     background-color: #FFFFFF;
     border-radius: 10px;
     box-sizing: border-box;
+    margin-bottom: 1px;
 }
-.span-xo{
-font-size: 50px; 
 
+.span-xo {
+    font-size: 50px;
     color: #6A6A6A;
-margin-right: 90px;
+    margin-right: 90px;
 }
-.organizar{
+
+.organizar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-}.quadros{
-    color:#0097E6 ;
 }
 
+.quadros {
+    color: #0097E6;
+}
+
+.modal-box {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.modal {
+    width: 240px;
+    height: 110px;
+    background-color: #0097E6;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-texto {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.modal-button {
+    width: 180px;
+    height: 25px;
+    margin-top: 5px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: #45F391;
+    color: #FFFFFF;
+    font-size: 20px
+}
