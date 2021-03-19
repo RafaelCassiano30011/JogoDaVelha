@@ -1,7 +1,7 @@
 const $body = document.querySelector('body')
 const $section = document.querySelector('.wrapper-historico-player')
 const $campo = document.querySelectorAll('.campo')
-const $campo0 = document.querySelector(".campo-0")
+const $dampo0 = document.querySelector(".campo-0")
 const $campo1 = document.querySelector(".campo-1")
 const $campo2 = document.querySelector(".campo-2")
 const $campo3 = document.querySelector(".campo-3")
@@ -10,7 +10,22 @@ const $campo5 = document.querySelector(".campo-5")
 const $campo6 = document.querySelector(".campo-6")
 const $campo7 = document.querySelector(".campo-7")
 const $campo8 = document.querySelector(".campo-8")
+
+const $buttonJogar = document.querySelector('.button-play')
 const $buttonReiniciar = document.querySelector('.button-reiniciar')
+
+const linha1 = [$campo[0], $campo[1], $campo[2]]
+const linha2 = [$campo[3], $campo[4], $campo[5]]
+const linha3 = [$campo[6], $campo[7], $campo[8]]
+
+const coluna1 = [$campo[0], $campo[3], $campo[6]]
+const coluna2 = [$campo[1], $campo[4], $campo[7]]
+const coluna3 = [$campo[2], $campo[5], $campo[8]]
+
+const diagonal1 = [$campo[0], $campo[4], $campo[8]]
+const diagonal2 = [$campo[2], $campo[4], $campo[6]]
+
+const verifyArray = [linha1, linha2, linha3, coluna1, coluna2, coluna3, diagonal1, diagonal2]
 
 const $placarcontador1 = document.querySelector('.placar-contador1')
 const $placarcontador2 = document.querySelector('.placar-contador2')
@@ -32,9 +47,12 @@ const historicoCardList = []
 let jogada = 'X'
 let pontosJogador1 = 0
 let pontosJogador2 = 0
-let jogoRodando = true
+let jogoRodando = false
 let botAtivado = false
 let modoDeJogo = 3
+
+
+
 
 
 const reiniciarTudo = () => {
@@ -42,6 +60,8 @@ const reiniciarTudo = () => {
     resetImprimirJogadas()
     resetarPontos()
     $section.innerHTML = ''
+    jogoRodando = false
+
 
 
 }
@@ -64,33 +84,22 @@ const toggleJogada = () => {
 
 const verifyJogo = () => {
     let resultado = ''
-
-    if ($campo0.textContent != '' && $campo0.textContent == $campo1.textContent && $campo1.textContent == $campo2.textContent) {
-        resultado = $campo0.textContent
-    } else if ($campo3.textContent != '' && $campo3.textContent == $campo4.textContent && $campo4.textContent == $campo5.textContent) {
-        resultado = ($campo3.textContent)
-    } else if ($campo6.textContent != '' && $campo6.textContent == $campo7.textContent && $campo7.textContent == $campo8.textContent) {
-        resultado = ($campo6.textContent)
-    } else if ($campo0.textContent != '' && $campo0.textContent == $campo3.textContent && $campo3.textContent == $campo6.textContent) {
-        resultado = $campo0.textContent
-    } else if ($campo1.textContent != '' && $campo1.textContent == $campo4.textContent && $campo4.textContent == $campo7.textContent) {
-        resultado = ($campo1.textContent)
-    } else if ($campo2.textContent != '' && $campo2.textContent == $campo5.textContent && $campo5.textContent == $campo8.textContent) {
-        resultado = ($campo2.textContent)
-    } else if ($campo0.textContent != '' && $campo0.textContent == $campo4.textContent && $campo4.textContent == $campo8.textContent) {
-        resultado = ($campo0.textContent)
-    } else if ($campo2.textContent != '' && $campo2.textContent == $campo4.textContent && $campo4.textContent == $campo6.textContent) {
-        resultado = ($campo2.textContent)
-    } else if (
-        $campo0.textContent != '' &&
-        $campo1.textContent != '' &&
-        $campo2.textContent != '' &&
-        $campo3.textContent != '' &&
-        $campo4.textContent != '' &&
-        $campo5.textContent != '' &&
-        $campo6.textContent != '' &&
-        $campo7.textContent != '' &&
-        $campo8.textContent != '') {
+    for (const verify of verifyArray) {
+        if (verify[0].textContent != '' && verify[0].textContent == verify[1].textContent && verify[1].textContent == verify[2].textContent) {
+            resultado = verify[0].textContent
+        }
+    }
+    if (
+        $campo[0].textContent != '' &&
+        $campo[1].textContent != '' &&
+        $campo[2].textContent != '' &&
+        $campo[3].textContent != '' &&
+        $campo[4].textContent != '' &&
+        $campo[5].textContent != '' &&
+        $campo[6].textContent != '' &&
+        $campo[7].textContent != '' &&
+        $campo[8].textContent != '' &&
+        resultado == '') {
         resultado = 'empate'
     }
 
@@ -166,31 +175,31 @@ const imprimirHistorico = (winner) => {
 
     const campohistorico0 = document.createElement(`span`)
     campohistorico0.classList.add('campo-historico')
-    campohistorico0.textContent = `${$campo0.textContent}`
+    campohistorico0.textContent = `${$campo[0].textContent}`
     const campohistorico1 = document.createElement(`span`)
     campohistorico1.classList.add('campo-historico')
-    campohistorico1.textContent = `${$campo1.textContent}`
+    campohistorico1.textContent = `${$campo[1].textContent}`
     const campohistorico2 = document.createElement(`span`)
     campohistorico2.classList.add('campo-historico')
-    campohistorico2.textContent = `${$campo2.textContent}`
+    campohistorico2.textContent = `${$campo[2].textContent}`
     const campohistorico3 = document.createElement(`span`)
     campohistorico3.classList.add('campo-historico')
-    campohistorico3.textContent = `${$campo3.textContent}`
+    campohistorico3.textContent = `${$campo[3].textContent}`
     const campohistorico4 = document.createElement(`span`)
     campohistorico4.classList.add('campo-historico')
-    campohistorico4.textContent = `${$campo4.textContent}`
+    campohistorico4.textContent = `${$campo[4].textContent}`
     const campohistorico5 = document.createElement(`span`)
     campohistorico5.classList.add('campo-historico')
-    campohistorico5.textContent = `${$campo5.textContent}`
+    campohistorico5.textContent = `${$campo[5].textContent}`
     const campohistorico6 = document.createElement(`span`)
     campohistorico6.classList.add('campo-historico')
-    campohistorico6.textContent = `${$campo6.textContent}`
+    campohistorico6.textContent = `${$campo[6].textContent}`
     const campohistorico7 = document.createElement(`span`)
     campohistorico7.classList.add('campo-historico')
-    campohistorico7.textContent = `${$campo7.textContent}`
+    campohistorico7.textContent = `${$campo[7].textContent}`
     const campohistorico8 = document.createElement(`span`)
     campohistorico8.classList.add('campo-historico')
-    campohistorico8.textContent = `${$campo8.textContent}`
+    campohistorico8.textContent = `${$campo[8].textContent}`
 
     boxHistoricoPlayer.appendChild(historicoPlayer)
     boxHistoricoPlayer.appendChild(cenario)
@@ -379,16 +388,9 @@ for (let i = 0; i < $campo.length; i++) {
 }
 
 $buttonBot.addEventListener('click', function() {
-    if (
-        $campo0.textContent != '' ||
-        $campo1.textContent != '' ||
-        $campo2.textContent != '' ||
-        $campo3.textContent != '' ||
-        $campo4.textContent != '' ||
-        $campo5.textContent != '' ||
-        $campo6.textContent != '' ||
-        $campo7.textContent != '' ||
-        $campo8.textContent != '') return
+    for (const campo of $campo) {
+        if (campo.textContent != '') return
+    }
     $buttonBot.classList.toggle('button-on')
     botAtivado = !botAtivado
     if (botAtivado) {
@@ -413,4 +415,8 @@ $buttonMd.addEventListener('click', function() {
 
 $buttonReiniciar.addEventListener('click', () => {
     reiniciarTudo()
+})
+
+$buttonJogar.addEventListener('click', () => {
+    jogoRodando = true
 })
