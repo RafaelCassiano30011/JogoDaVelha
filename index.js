@@ -139,10 +139,14 @@ const verifyModoDeJogo = (winner) => {
         if (pontosJogador1 === 2 || pontosJogador2 === 2 || pontosJogador1 > 2 || pontosJogador2 > 2) {
             modal(`Jogador ${nomeGanhador} Ganhou`)
             resetarPontos()
+            jogoRodando = false
+            $buttonJogar.classList.remove('button-jogar-on')
         }
     } else if (pontosJogador1 === 3 || pontosJogador2 === 3 || pontosJogador1 > 3 || pontosJogador2 > 3) {
         modal(`Jogador ${nomeGanhador} Ganhou`)
         resetarPontos()
+        jogoRodando = false
+        $buttonJogar.classList.remove('button-jogar-on')
     }
 
 }
@@ -418,5 +422,10 @@ $buttonReiniciar.addEventListener('click', () => {
 })
 
 $buttonJogar.addEventListener('click', () => {
+    for (const campo of $campo) {
+        if (campo.textContent != '') return
+    }
     jogoRodando = true
+    $buttonJogar.classList.toggle('button-jogar-on')
+
 })
