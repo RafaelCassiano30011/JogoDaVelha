@@ -406,7 +406,9 @@ $buttonBot.addEventListener('click', function() {
     }
 })
 $buttonMd.addEventListener('click', function() {
-
+    for (const campo of $campo) {
+        if (campo.textContent != '') return
+    }
     $buttonMd.classList.toggle('button-md-on')
 
     if (modoDeJogo === 3) {
